@@ -15,15 +15,31 @@
           "options": {
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+           "assets": [
+  {
+    "glob": "**/*",
+    "input": "public",
+    "output": "/assets/"
+  },
+  {
+    "glob": "**/*",
+    "input": "src/assets",
+    "output": "assets"
+  }
+],
+"styles": [
+  "src/assets/css/argon-dashboard.css",
+  "node_modules/bootstrap/dist/css/bootstrap.min.css",
+  "src/styles.css"
+],
+"scripts": [
+  "src/assets/js/core/popper.min.js",
+  "src/assets/js/core/bootstrap.min.js",
+  "src/assets/js/plugins/perfect-scrollbar.min.js",
+  "src/assets/js/plugins/smooth-scrollbar.min.js",
+  "src/assets/js/plugins/chartjs.min.js",
+  "src/assets/js/argon-dashboard.min.js"
+],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -86,5 +102,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "ad5c9755-30cc-49c9-8ae7-bb1d04a53140"
   }
 }
